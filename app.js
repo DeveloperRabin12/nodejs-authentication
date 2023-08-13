@@ -1,4 +1,6 @@
-const express= require("express")
+const express= require("express");
+const {users} = ("/model/");
+//const bcrypt = require("bcryptjs");
 const app = express();
 
 
@@ -20,12 +22,13 @@ app.get("/register",(req,res)=>{
 })
 
 //post api
-app.post("/submit_registration",(req, res)=>{
-    users.create({
+app.post("/createUser",async (req, res)=>{
+    await users.create({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password,
+        password: req.body.password, 
     });
+    res.send("user created successfully");
 })
 
 app.listen(4500,()=>{

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define("user", {    //blog is table name on database
+    const User = sequelize.define("user", {    //user is table name on database
       username: {
         type: DataTypes.STRING,
         allowNull: false,
